@@ -1,0 +1,14 @@
+{
+	"name": "multi-ssh-web",
+	"version": "0.0.1",
+	"engines": { "node": ">=0.10.0" },
+	"homepage": "https://github.com/LastLeaf/multi-ssh-web",
+	"repository": { "type": "git", "url": "https://github.com/LastLeaf/multi-ssh-web.git" },
+	"License": "MIT",
+	"dependencies": {
+		"fw.mpa": "~0.3.0",
+		"ssh2": "~0.3.6"
+	},
+	"author": "LastLeaf <bqfu@163.com> http://lastleaf.me",
+	"contributors": []
+}
