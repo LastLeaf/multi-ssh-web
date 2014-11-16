@@ -1,0 +1,139 @@
+.statusList {
+	background: #ddd;
+	padding: 10px 10px 15px;
+	border-bottom: 1px solid #888;
+	box-shadow: 0 0 4px #888;
+	user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+}
+.status {
+	display: inline-block;
+	margin: 5px;
+	padding: 4px 6px;
+	box-shadow: 0 0 5px #aaa;
+	font-size: 12px;
+	color: #fff;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.status-selected {
+	border: 2px solid orange;
+	padding: 2px 4px;
+	box-shadow: 0 0 10px orange;
+}
+.status:hover {
+	text-shadow: 0 0 3px yellow;
+}
+.status-disconnected {
+	background: grey;
+}
+.status-connected {
+	background: green;
+}
+.status-busy {
+	background: orange;
+}
+.status-error {
+	background: red;
+}
+
+.statusButtons {
+	user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+	margin-top: -14px;
+	padding: 0 20px 15px;
+	text-align: right;
+}
+.statusButtons>div {
+	display: inline-block;
+	margin: 0 5px;
+	padding: 3px 5px;
+	border: 1px solid #888;
+	box-shadow: 0 0 2px #888;
+	font-size: 12px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+}
+.statusButtons>div:hover {
+	text-shadow: 0 0 3px yellow;
+}
+.statusSelectAll {
+	background: green;
+}
+.statusSelectNone {
+	background: grey;
+}
+.statusCommand {
+	background: orange;
+}
+
+.commands {
+	padding: 0 15px;
+}
+.commandsTitle {
+	color: #444;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+.commandsTitle span {
+	color: #888;
+	padding-left: 10px;
+}
+.commandsTextarea {
+	box-sizing: border-box;
+	width: 50%;
+	height: 400px;
+	font-family: monospace;
+	font-size: 14px;
+}
+.commandsSubmit {
+	display: block;
+	margin: 5px auto;
+	padding: 10px 20px;
+}
+
+.historyList {
+	padding: 0 15px 15px;
+	font-size: 14px;
+	color: #444;
+}
+.historyTitle {
+	color: #888;
+	padding-bottom: 5px;
+}
+.historyClear {
+	margin-left: 10px;
+}
+.history {
+	margin: 0;
+	padding: 2px 4px;
+}
+.history-execStart {
+	background: orange;
+}
+.history-execDone {
+	background: green;
+	color: #fff;
+}
+.history-execError {
+	background: red;
+	color: #fff;
+}
+.history-execFail {
+	background: red;
+	color: #fff;
+}
+.history-execStderr {
+	background: yellow;
+}
+.historyCommand {
+	padding: 5px 0;
+}
+.historyCommandText {
+	width: 50%;
+}

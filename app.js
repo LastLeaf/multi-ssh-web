@@ -8,6 +8,10 @@ var config = {
 		title: 'multi-ssh-web',
 		version: JSON.parse(fs.readFileSync('package.json').toString('utf8')).version
 	},
+	client: {
+		favicon: 'favicon.ico',
+		loadingLogo: 'loading.gif'
+	},
 	secret: {
 		cookie: JSON.parse(fs.readFileSync('config.json').toString('utf8')).secret
 	}
@@ -16,21 +20,23 @@ var config = {
 var routes = {
 	global: {
 		lib: 'jquery-2.1.1',
-		main: 'global.js'
+		main: 'global.js',
+		style: 'global.css'
 	},
 	'*': {
-		parent: 'global',
-		redirect: 'index.js'
+		redirect: '/'
 	},
 	'/': {
 		parent: 'global',
 		main: 'index.js',
-		tmpl: 'index.tmpl'
+		tmpl: 'index.tmpl',
+		style: 'index.css'
 	},
 	'/servers': {
 		parent: 'global',
 		main: 'servers.js',
-		tmpl: 'servers.tmpl'
+		tmpl: 'servers.tmpl',
+		style: 'servers.css'
 	}
 };
 

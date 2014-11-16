@@ -1,0 +1,22 @@
+.config {
+	padding: 20px;
+	color: #444;
+	font-size: 14px;
+}
+.config label {
+	display: block;
+	float: left;
+	width: 80%;
+}
+.config textarea {
+	display: block;
+	box-sizing: border-box;
+	width: 80%;
+	float: left;
+	font-size: 14px;
+	height: 300px;
+}
+.config input {
+	margin: 20px;
+	padding: 5px 10px;
+}

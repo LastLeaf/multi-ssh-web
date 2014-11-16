@@ -61,7 +61,7 @@ module.exports = function(app, cb){
 			if(!connected || executing) {
 				setTimeout(function(){
 					var err = new Error('Connection not available.');
-					ev.emit('execError', err);
+					ev.emit('execError', command, err);
 					cb(err);
 				}, 0);
 				return;
@@ -70,15 +70,21 @@ module.exports = function(app, cb){
 			conn.exec(command, function(err, stream){
 				executing = false;
 				if(!err) {
+					stream.on('data', function(data){
+						ev.emit('execStdout', command, data);
+					});
+					stream.stderr.on('data', function(data){
+						ev.emit('execStderr', command, data);
+					});
 					stream.on('exit', function(code, signal){
 						if(!code && !signal) {
-							ev.emit('execDone');
+							ev.emit('execDone', command);
 						} else {
-							ev.emit('execFail', code, signal);
+							ev.emit('execFail', command, code, signal);
 						}
 					});
 				} else {
-					ev.emit('execError', err);
+					ev.emit('execError', command, err);
 				}
 				cb(err, stream);
 			});

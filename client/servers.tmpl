@@ -1,1 +1,37 @@
-<tmpl id="main" minify></tmpl>
+<tmpl id="main" minify>
+	<div id="statusList" class="statusList">
+		{{#each this}}<div class="status {{#if this}}status-connected{{else}}status-disconnected{{/if}}" server="{{@key}}">{{@key}}</div>{{/each}}
+	</div>
+	<div id="statusButtons" class="statusButtons">
+		<div class="statusSelectAll">Select All</div>
+		<div class="statusSelectNone">Select None</div>
+		<div class="statusCommand">New Commands</div>
+	</div>
+	<div id="main"></div>
+</tmpl>
+
+<tmpl id="commands" minify>
+	<div class="commands">
+		<div class="commandsTitle">New Commands to {{serverCount}} Server(s):
+			{{#each servers}}<span>{{this}}</span>{{/each}}
+		</div>
+		<textarea name="commands" class="commandsTextarea" placeholder="Commands (one per line, $0=>server, $1~$9=>args)"></textarea>
+		<textarea name="args" class="commandsTextarea" placeholder="Args ($1~$9 for each row, split by \t)"></textarea>
+		<input type="button" value="Run Commands" class="commandsSubmit">
+	</div>
+</tmpl>
+
+<tmpl id="history" minify>
+	<div class="historyList">
+		<div class="historyTitle">Command History for {{server}} <input type="button" value="clear" class="historyClear"></div>
+		{{#each history}}<pre class="history history-{{type}}">{{text}}</pre>{{/each}}
+		<form class="historyCommand">
+			<input type="text" placeholder="New Command..." class="historyCommandText">
+			<input type="submit" value="Run" class="historyCommandSubmit">
+		</form>
+	</div>
+</tmpl>
+
+<tmpl id="historyItem" minify>
+	<pre class="history history-{{type}}">{{text}}</pre>
+</tmpl>
